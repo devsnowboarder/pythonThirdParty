@@ -3,15 +3,15 @@
 import requests
 
 # TODO: create a basic request for data
-resp = requests.get("http://httpbin.org/xml")
-print(resp.status_code)
-print(resp.text)
+#resp = requests.get("http://httpbin.org/xml")
+#print(resp.status_code)
+#print(resp.text)
 
 # TODO: create a request using parameters
-# args = {"key1": 1, "key2": "two", "key3": False}
-# resp = requests.get("http://httpbin.org/get", params=args)
-# print(resp.text)
-# print(resp.url)
+args = {"key1": 1, "key2": "two", "key3": False}
+resp = requests.get("http://httpbin.org/get", params=args)
+print(resp.text)
+print(resp.url)
 
 # TODO: create a request using POST
 # resp = requests.post("http://httpbin.org/post", data={"key": "value"})
