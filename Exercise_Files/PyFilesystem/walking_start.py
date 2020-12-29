@@ -5,14 +5,22 @@ from fs.osfs import OSFS
 from fs.zipfs import ZipFS
 
 # create a basic file walker
-with OSFS(".") as myfs:
-    print("-- Files --")
+#with OSFS(".") as myfs:
+   # print("-- Files --")
     # TODO: use the files walker to process files
+    #for path in myfs.walk.files(filter=["*.txt"]):
+     #   print(path)
 
-    print("-- Directories --")
+   # print("-- Directories --")
     # TODO: use the dirs walker for directories
-
+   # for path in myfs.walk.dirs():
+    #    print(path)
+#
 # TODO: use the info property to step through items
+with OSFS(".") as myfs:
+    for path,info in myfs.walk.info(namespaces=["details"]):
+        print(path,info.is_dir, info.size)
+
 
 # TODO: Use the walk object by itself:
 
