@@ -36,6 +36,17 @@ sess.headers.update({
     "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) relesys_web_client/1.3.10.0 (RelesysApp/1.3.43 net.relesysapp.nettoenterprise)"
 })
 resp = sess.get("http://fastsnowboarder.com")
-#print(resp.content)
-#print(resp.text)
-print(len(resp.content))
+
+print(resp.text)
+
+website= resp.text
+
+print(website)
+
+if "49ers" in website:
+    print("found")
+
+print(website.find("49ers"))
+print(website.find("bootstrap"))
+
+

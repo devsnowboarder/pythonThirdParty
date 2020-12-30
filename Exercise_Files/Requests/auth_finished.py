@@ -18,3 +18,9 @@ url = "https://httpbin.org/digest-auth/auth/theuser/thepass"
 resp = requests.get(url, auth=HTTPDigestAuth(user, passwd))
 print(resp.status_code)
 print(resp.text)
+print(resp.json())
+
+mike_text=resp.text
+print(mike_text)
+if "theuser"  in mike_text:
+    print("found")
