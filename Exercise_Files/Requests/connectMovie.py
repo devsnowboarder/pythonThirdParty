@@ -1,5 +1,7 @@
 import requests
 import pprint
+import pandas as pd
+
 
 api_key='39cbcf567177dbc06a77585a52cfba1d'
 api_key_v4='eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzOWNiY2Y1NjcxNzdkYmMwNmE3NzU4NWE1MmNmYmExZCIsInN1YiI6IjVmZWNlM2EwNGNjYzUwMDAzYzdmNTNjYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ED0IOavDxaRLBaT1Zj3fa5SyHrOSPgLnfRJjb7SHMJM'
@@ -87,6 +89,9 @@ if resp.status_code in range(200,299):
         movie_ids.add(_id)
    # print(list(movie_ids))
 
+output = 'movies.csv'
+movie_data =[]
+
 
 for movie_id in movie_ids:
     api_version = 3
@@ -94,5 +99,12 @@ for movie_id in movie_ids:
     endpoint_path =f"/movie/{movie_id}"
     endpoint = f"{api_base_url}{endpoint_path}?api_key={api_key}"
     resp = requests.get(endpoint)
+    data = resp.json()
+    movie_data.append(data)
     print(resp.json())
+
+
+df= pd.DataFrame(movie_data)
+print(df.head())
+df.to_csv(output,index=False)
 
