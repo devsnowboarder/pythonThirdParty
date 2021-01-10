@@ -1,5 +1,7 @@
 import requests
 import pprint
+import jsonpath
+import json
 import pandas as pd
 
 
@@ -77,6 +79,18 @@ print(resp.json())
 pprint.pprint(endpoint)
 pprint.pprint(resp.json())
 
+
+json_response =json.loads(resp.text)
+print("XXXXXXXXX")
+pages = jsonpath.jsonpath(json_response,"results[0].id")
+print(pages)
+pages = jsonpath.jsonpath(json_response,"results[1].original_title")
+print(pages)
+print("XXXXXXXXX")
+
+
+
+
 if resp.status_code in range(200,299):
     data =resp.json()
   #  print(data.keys())
@@ -104,7 +118,7 @@ for movie_id in movie_ids:
     print(resp.json())
 
 
-df= pd.DataFrame(movie_data)
-print(df.head())
-df.to_csv(output,index=False)
+#df= pd.DataFrame(movie_data)
+#print(df.head())
+#df.to_csv(output,index=False)
 
