@@ -33,7 +33,7 @@ htmlString = Template("""<html><head><script type="text/javascript" src="https:/
       var data = google.visualization.arrayToDataTable([
       $labels,
       $data
-      ],
+      ],git b
       false);tu
 
       var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
