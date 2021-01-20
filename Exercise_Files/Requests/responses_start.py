@@ -16,8 +16,11 @@ import requests
 
 # TODO: To read JSON content, use the json() function
 
-resp = requests.get("https://httpbin.org/json")
+#resp = requests.get("https://httpbin.org/json")
 #print(resp.json())
-print(resp.headers)
-print(resp.headers['content-type'])
+#print(resp.headers)
+#print(resp.headers['content-type'])
 
+resp = requests.get("http://www.w3.org/pub/WWW/TheProject.html")
+print(resp.text)
+print(resp.content)
