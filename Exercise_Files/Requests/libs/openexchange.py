@@ -1,9 +1,9 @@
 import requests
 #import functools
 from cachetools import cached, TTLCache
+git
 
-
-class OpenExchangeClient:
+class OpenExchangeClient:gi
     BASE_URL= "https://openexchangerates.org/api"
 
     def __init__(self,app_id):
