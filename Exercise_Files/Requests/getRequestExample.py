@@ -44,4 +44,7 @@ print(len(url_list))
 print(len(set(url_list)))
 
 
+for url in url_list:
+    print(url)
+
 
