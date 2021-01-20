@@ -1,6 +1,7 @@
 # Python Essential Libraries by Joe Marini course example
 # Example file for using Requests library
 import requests
+import pprint
 
 #this is a test
 
@@ -24,3 +25,8 @@ print(resp.text)
 heads = {"my-custom-header": "This is a custom header"}
 resp = requests.get("http://httpbin.org/get", headers=heads)
 print(resp.text)
+response = resp.json()
+
+print(resp.json())
+pprint.pprint(response)
+print(response["headers"]["My-Custom-Header"])

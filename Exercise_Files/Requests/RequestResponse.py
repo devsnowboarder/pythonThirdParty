@@ -1,13 +1,18 @@
 
 import requests
+from Exercise_Files.Requests.payloaddata.payloadtype2 import payloadtype
 
 url = "http://httpbin.org/post"
 
+
+
+
+
 #payload = "{\n    \"key1\": 1,\n    \"key2\": \"value2\"\n}"
-payload ={
-          "key1":1,
-          "key2": "value2"
-         }
+#payload ={
+ #         "key1":1,
+  #        "key2": "value2"
+  #       }
 
 headers = {
     'Content-Type': "application/json,text/plain",
@@ -22,10 +27,11 @@ headers = {
     'cache-control': "no-cache"
     }
 
-response = requests.request("POST", url, data=payload, headers=headers)
+response = requests.request("POST", url, data=payloadtype(), headers=headers)
 
 print(response.status_code)
 assert response.status_code == 200
 
 
 print(response.text)
+
