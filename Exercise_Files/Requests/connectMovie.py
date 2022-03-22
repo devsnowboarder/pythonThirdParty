@@ -65,6 +65,7 @@ Post -> add/update data
 
 movie_id=500
 api_version=3
+
 searchQuery = 'The Matrix'
 api_base_url =f"https://api.themoviedb.org/{api_version}"
 endpoint_path =f"/search/movie"
